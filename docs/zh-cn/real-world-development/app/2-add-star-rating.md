@@ -3,7 +3,7 @@ title: "第 2 课 - 添加星级评分：快速上手"
 description: "在 GitHub Copilot app 中启动第一个智能体会话，对游戏卡片进行一项小改动，并通过第一个拉取请求合并更改。"
 authors:
   - geektrainer
-lastUpdated: 2026-07-09
+lastUpdated: 2026-10-22
 ---
 
 在上一课中，你浏览了工作区并使用了快速聊天。现在可以启动**智能体会话**，对项目进行第一次更改。此次改动很小：游戏数据中已有星级评分，但主页上的游戏卡片尚未显示。你将要求智能体显示评分、审查更改，并通过第一个拉取请求合并更改。
@@ -31,7 +31,7 @@ Tailspin Toys 中的每款游戏都可以有星级评分，该评分已显示在
 现在启动新会话，探索项目并实现功能。在[上一课][prior-lesson]中，你从 GitHub 存储库添加了项目。接下来为该存储库创建新会话并请求更改。
 
 1. 返回（或打开）GitHub Copilot app。
-2. 选择 **Projects** 旁的 **+**。
+2. 选择侧边栏顶部的 **+** 以启动会话。
 3. 选择 `tailspin-toys` 作为存储库。
 4. 在提示框下方选择 **new working tree** 和 **Interactive** 模式。使用以下提示词请求更改：
 
@@ -51,7 +51,9 @@ Copilot app 首先创建新的工作树，即项目的隔离副本。随后，�
 
     ![GitHub Copilot app 顶部工具栏，箭头指向 Create PR 右侧的 Toggle review panel 按钮](../../../_images/app-2-review-panel.png)
 
-2. 应会看到核心游戏详情显示文件 `GameCard.astro` 中新增了代码。代码应与以下示例类似：一个小代码块，在评分存在时呈现评分，在 `starRating` 为 `null` 时回退到 "No rating yet"：
+   在打开的面板中选择 **Changes**，查看已更改文件及其差异。
+
+2. 你应该会看到核心文件 `GameCard.astro` 中新增了代码，用于显示游戏详情。代码应与以下示例类似：评分存在时显示评分，`starRating` 为 `null` 时显示 "No rating yet"：
 
    ```astro
    {game.starRating !== null ? (
@@ -97,10 +99,11 @@ Copilot app 首先创建新的工作树，即项目的隔离副本。随后，�
 
 1. 选择右上角的 **Create PR**。
 2. 如果系统提示，请选择 **Sign in with your browser**，并按照提示完成身份验证。
-3. Copilot 开始创建 PR。
-4. 选择聊天上方的 **PR** 气泡，在审查窗格中打开并查看拉取请求。可根据需要在此审查 PR。
-5. 准备好后，选择 **Ready to merge**。
-6. 在新对话框窗口中选择 **Merge pull request**，合并拉取请求。
+3. 如果 Copilot 说明存储库策略要求创建 PR 前先关联议题，请确认它应遵循该流程。
+4. Copilot 开始创建 PR。
+5. 选择聊天上方的 **PR** 气泡，在审查窗格中打开 PR。你可以按需审查 PR。
+6. 准备好后，选择 **Ready to merge**。
+7. 在新对话框中选择 **Merge pull request**，合并拉取请求。
 
 ## 总结与后续步骤
 
